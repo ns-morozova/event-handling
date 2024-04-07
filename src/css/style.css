@@ -1,0 +1,41 @@
+body {
+  background: #000;
+  font-size: 16px;
+}
+
+#game-container {
+    background-color: pink;
+    width: 425px;
+    height: 425px;
+}
+
+.board-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  grid-template-columns: repeat(8, 1fr);
+  grid-column-gap: 2px;
+  grid-row-gap: 2px;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-column-gap: 2px;
+  grid-row-gap: 2px;
+  
+}
+
+.cell {
+  position: relative;
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  background-color: green;
+  border: 2px yellow solid;
+}
+
+.goblin {
+    background-image: url('/pic/goblin.png');
+}

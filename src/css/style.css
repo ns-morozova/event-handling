@@ -27,6 +27,17 @@ body {
   
 }
 
+.scores {
+  margin-top: 50px;
+  color: white;
+  font-size: 20px;
+}
+
+.pass {
+  color: white;
+  font-size: 20px;
+}
+
 .cell {
   position: relative;
   display: inline-block;
@@ -38,4 +49,46 @@ body {
 
 .goblin {
     background-image: url('/pic/goblin.png');
+}
+
+.cursor {
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    left: 0; /* border: 2px solid white; */ /* background-color: rgba(255, 255, 255, 0.356); */
+    height: 40px;
+    width: 40px;
+    border-radius: 50px;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    background-image: url('/pic/hammer.png');
+}
+.cursor::after,
+.cursor::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: gray;
+    height: 7px;
+    width: 7px;
+    border-radius: 50px;
+}
+.cursor::before {
+    background-color: rgb(255, 255, 255);
+}
+.cursor.click::before {
+    animation: click 1s ease forwards;
+    background-color: rgb(255, 255, 255);
+}
+@keyframes click {
+    0% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(7);
+    }
 }

@@ -1,10 +1,9 @@
 import GamePlay from "./GamePlay";
+import GameController from "./GameController";
+import GameState from "./GameState";
 
 const gamePlay = new GamePlay();
-gamePlay.init();
-gamePlay.drawUi();
-function draw() {
-    gamePlay.draw();
-}
+const gameState = new GameState();
+const gameCntrl = new GameController(gamePlay, gameState);
 
-setInterval(draw, 1000);
+gameCntrl.init();

@@ -12,6 +12,7 @@ cache: node_modules  # кеширование
 
 install:
   - yarn install  # команда установки зависимостей
+  - yarn global add npx
 
 build: off  # отключаем встроенную в appveyor систему сборки
 

@@ -49,6 +49,9 @@ body {
 
 .goblin {
     background-image: url('/pic/goblin.png');
+    background-size: 90px;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .cursor {

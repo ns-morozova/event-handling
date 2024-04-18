@@ -28,10 +28,15 @@ export default class GamePlay {
         <span class="count-scores">0</span>
       </div>
       <div class="pass">
-        <span>Количество пропусков:</span>
+        <span>Количество промахов:</span>
         <span class="count-pass">0</span>
       </div>
+      <div class="pass">
+        <span>Количество пропусков:</span>
+        <span class="count-skip">0</span>
+      </div>
     `;
+
     this.boardEl = this.container.querySelector(".board-container");
 
     for (let i = 0; i < this.boardSize ** 2; i += 1) {
@@ -101,11 +106,13 @@ export default class GamePlay {
     }
   }
 
-  drawScores(scores, pass) {
+  drawScores(scores, pass, skip) {
     const countScores = this.container.querySelector(".count-scores");
     countScores.textContent = scores;
     const countPass = this.container.querySelector(".count-pass");
     countPass.textContent = pass;
+    const countSkip = this.container.querySelector(".count-skip");
+    countSkip.textContent = skip;
   }
 
   showMessage(message) {
